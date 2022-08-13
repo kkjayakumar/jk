@@ -20,12 +20,12 @@ pipeline {
 
                     pwd(); //Log current directory
 
-                    withAWS(region:'us-east-1',credentials:'18a9ad57-22ad-4d15-9dda-391bccb8fc13') {
+                    withAWS(region:'us-east-1',credentials:'AKIAUWRV2TBGX63KS7HM') {
 
                         def identity=awsIdentity();//Log AWS credentials
 
                         // Upload files from working directory '' in your project workspace
-                        s3Upload(bucket:"angular cv", workingDir:'', includePathPattern:'**/*');
+                        s3Upload(bucket:"webpage14june2022", workingDir:'', includePathPattern:'**/*');
                         // invalidate CloudFront distribution
                         cfInvalidate(distribution:'E336156JMBDBF0', paths:['/*'])
                     }
